@@ -1,1 +1,43 @@
-/* HER LAVER VI STYLE TIL TO DO APP */
+/* HER LAVER VI STYLE TIL TO DO APP */¨
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Smooch+Sans:wght@100..900&display=swap');
+:root{
+    --light: #ddd;
+    --medium: #999;
+    --dark: #333;
+    --black: #212121;
+    --primary: #4ae;
+    --secondary: #ddd;
+    --danger: #d44;
+    --success: #deb887;
+    --headings: #32729b;
+      /* BUTTONS */
+    --static: #44ccee;
+    --active: #00ff84;
+
+
+}
+
+main{
+    border: solid;
+}
+/* HEADER */
+header{
+    background-color: #deb887;
+}
+
+
+h1{
+   font-family: "Montserrat", sans-serif;
+}
+/* FOOTER */
+
+footer{
+    background-color: #4ae;
+}
+
+@media(min-width: 600px) {
+  body {
+    
+  }
+}
