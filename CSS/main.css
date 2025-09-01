@@ -18,8 +18,10 @@
 
 }
 
-main{
-    border: solid;
+body{
+        border-style: solid;
+        border-width: 5px;
+        border-color: green;
 }
 /* HEADER */
 header{
