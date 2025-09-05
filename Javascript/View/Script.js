@@ -31,7 +31,7 @@ function makeNewData(){
             },
 
              {
-                listName:"list 1",
+                listName:"Indkøb",
                 items:[{name: "Kød", done:false},{name:"Salat", done:true}, {name:"Sovs", done:false}]
             }
         ]
@@ -50,25 +50,39 @@ function initApp(){
     
     // hent data
     currentData=getData();
+    //EVLUAER DATA
     if (currentData==null) {
         //VI HAR IKKE DATA
 
         currentData = makeNewData()
         saveData(currentData)
-        //VIS DATA TIL USER
-        
     } 
+
         // VIS DATA TIL USER
-        
-
-
-
-    
-    // evaluer data
+        makeListView(currentData)
 
 }
+
 // #endregion
 // #region VIEW CODE
+function makeListView(data){
+    console.log('makeListView');
+    //VIS DATA TIL BRUGER
+    console.log(data);
+
+    //tøm contentsection
+    contentSection.innerHTML='';
+    data.lists.forEach(list => {
+    
+
+    let listContainer = document.createElement('div')
+// vis liste
+listContainer.innerHTML=`<h2>${list.listName}</h2><button>Delete</button>`
+
+    contentSection.appendChild(listContainer)
+    });
+}
+
 // #endregion
 
 
