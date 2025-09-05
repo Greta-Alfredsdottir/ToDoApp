@@ -72,15 +72,18 @@ function makeListView(data){
 
     //tøm contentsection
     contentSection.innerHTML='';
-    data.lists.forEach(list => {
+    data.lists.forEach ((list,index) => {
     
 
     let listContainer = document.createElement('div')
 // vis liste
-listContainer.innerHTML=`<h2>${list.listName}</h2><button>Delete</button>`
+listContainer.innerHTML=`<h2 onclick="listViewCallBack('showlist',${index})">${list.listName}</h2>
+<button>Delete</button>
+<button>Edit</button>`
 
     contentSection.appendChild(listContainer)
     });
+
 }
 
 // #endregion
