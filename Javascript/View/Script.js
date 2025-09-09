@@ -1,4 +1,4 @@
-// HER LÆGGER VI ALLE JAVASCRIPT FILES SAMMEN
+// HER HAR VI VORES JAVASCRIPT FILE
 
 // #region GLOBALS
 const contentSection = document.getElementById("mainContainer");

@@ -1,2 +1,0 @@
-// HER LAVER VI LOADDATA
-
