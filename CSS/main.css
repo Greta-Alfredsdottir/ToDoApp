@@ -1,4 +1,4 @@
-/* HER LAVER VI STYLE TIL TO DO APP */¨
+/* HER LAVER VI STYLE TIL TO DO APP */
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Smooch+Sans:wght@100..900&display=swap');
 :root{
@@ -21,11 +21,11 @@
 body{
         border-style: solid;
         border-width: 5px;
-        border-color: green;
+        border-color: rgb(237, 143, 143);
 }
 /* HEADER */
 header{
-    background-color: #deb887;
+    background-color: #c16262;
 }
 
 
@@ -35,11 +35,11 @@ h1{
 /* FOOTER */
 
 footer{
-    background-color: #4ae;
+    background-color: rgb(233, 122, 122);
 }
 
 @media(min-width: 600px) {
   body {
-    
+    background-color: #933c79;
   }
 }

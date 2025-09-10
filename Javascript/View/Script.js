@@ -5,7 +5,7 @@ const contentSection = document.getElementById("mainContainer");
 let currentData=null;
 // #endregion
 
-initApp() // FUNCTIONSCALL TO A FUNCTIONEN "INITAPP"
+initApp() // FUNCTIONSCALL TO FUNCTIONEN "INITAPP"
 
 // #region MODEL CODE
 function getData(){
@@ -72,7 +72,7 @@ saveButton.addEventListener("click", ()=>{
 
   }
   document.getElementById("newListButton").addEventListener("click", () => {
-    createInput("Mogens", "Jørgen")
+    createInput("Greta", "Jørgen")
   })
 
 // #endregion
