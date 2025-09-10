@@ -37,7 +37,7 @@ h1{
 footer{
     background-color: rgb(233, 122, 122);
 }
-
+/* MOBILE FIRST */
 @media(min-width: 600px) {
   body {
     background-color: #933c79;
