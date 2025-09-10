@@ -5,7 +5,7 @@ const contentSection = document.getElementById("mainContainer");
 let currentData=null;
 // #endregion
 
-initApp()
+initApp() // FUNCTIONSCALL TO A FUNCTIONEN "INITAPP"
 
 // #region MODEL CODE
 function getData(){
@@ -41,6 +41,18 @@ function makeNewData(){
     //RETURN NEWDATA
     return newData;
 }
+ function createInput (obj_data){
+
+      let inputElement = document.createElement("Input")
+      if(obj_data){
+          inputElement.id = obj_data.id
+          inputElement.value = obj_data.value
+      }
+      else{
+          inputElement.id = crypto.randomUUID()
+      }
+  }
+
 
 // #endregion
 
