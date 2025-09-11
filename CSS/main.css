@@ -25,7 +25,9 @@ body{
 }
 /* HEADER */
 header{
-    background-color: #c16262;
+  font-family: "Montserrat" ;
+  
+  background-color: #c16262;
 }
 
 

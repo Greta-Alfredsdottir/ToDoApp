@@ -37,12 +37,13 @@ function makeNewData(){
         ]
 
     }
+    
     //RETURN NEWDATA
     return newData;
 }
  function createInput (obj_data, saftevand){
 console.log(obj_data, saftevand);
-let inputContainer = document.createElement("div")
+    let inputContainer = document.createElement("div")
     let inputElement = document.createElement("input")
     let saveButton = document.createElement("button")
     saveButton.innerText = "gem"
@@ -66,12 +67,15 @@ saveButton.addEventListener("click", ()=>{
     localStorage.setItem("ToDoListApp_v1",JSON.stringify(data))
     initApp(),
     console.log(data);
+    inputContainer.remove();
+    console.log(data);
+    
     
 })
 
   }
   document.getElementById("newListButton").addEventListener("click", () => {
-    createInput("Greta", "Jørgen")
+    createInput();
   })
 
 // #endregion
@@ -92,32 +96,24 @@ function initApp(){
 
         // VIS DATA TIL USER
         makeListView(currentData)
-        function showListItems(index, data) {
-    contentSection.innerHTML = `<h2>${data.lists[index].listName}</h2>`;
-    const ul = document.createElement('ul');
-    data.lists[index].items.forEach(item => {
-        const li = document.createElement('li');
-        li.innerText = item.name + (item.done ? " ✔️" : "");
-        ul.appendChild(li);
-    });
-    contentSection.appendChild(ul);
-
-    // Tilføj tilbage-knap
-    const backBtn = document.createElement('button');
-    backBtn.innerText = "Tilbage";
-    backBtn.onclick = () => makeListView(data);
-    contentSection.appendChild(backBtn);
-}
 
 }
 
 // #endregion
 // #region VIEW CODE
-function makeListView(data){
+function makeListView(data)
+{
     console.log('makeListView');
+    //VIS DATA TIL BRUGER
+    console.log(data);
+
+    //tøm contentsection
     contentSection.innerHTML='';
+    
     data.lists.forEach ((list,index) => {
         let listContainer = document.createElement('div');
+
+        // Opret h2 for listenavn
         const h2 = document.createElement('h2');
         h2.innerText = list.listName;
         h2.style.cursor = "pointer";
@@ -125,14 +121,22 @@ function makeListView(data){
         listContainer.appendChild(h2);
 
         // Tilføj knapper
-        listContainer.innerHTML += `
-            <button class="delete-btn" data-index="${index}">Delete</button>
-            <button class="edit-btn" data-index="${index}">Edit</button>
-        `;
+        const deleteBtn = document.createElement('button');
+        deleteBtn.className = "delete-btn";
+        deleteBtn.innerText = "Delete";
+        deleteBtn.setAttribute('data-index', index);
+
+        const editBtn = document.createElement('button');
+        editBtn.className = "edit-btn";
+        editBtn.innerText = "Edit";
+        editBtn.setAttribute('data-index', index);
+
+        listContainer.appendChild(deleteBtn);
+        listContainer.appendChild(editBtn);
+
         contentSection.appendChild(listContainer);
     });
-    // ... resten af din kode ...
-}
+
      // Add event listeners for delete buttons
      // Delete button logic
     document.querySelectorAll('.delete-btn').forEach(btn => {
@@ -168,6 +172,7 @@ function makeListView(data){
         });
     });
 
+}
 // 1. Create the button
 const darkModeBtn = document.createElement("button");
 darkModeBtn.innerText = "Toggle Dark Mode";
@@ -215,7 +220,71 @@ function initApp(){
     applyDarkMode(currentData.darkMode); // <-- add this line
     makeListView(currentData)
 }
- 
+
+function showListItems(listIndex) {
+    const list = currentData.lists[listIndex];
+    contentSection.innerHTML = `<h2>${list.listName}</h2>`;
+    const ul = document.createElement('ul');
+    list.items.forEach((item, idx) => {
+        const li = document.createElement('li');
+        li.innerText = item.name + (item.done ? " ✔️" : "");
+        ul.appendChild(li);
+    });
+    contentSection.appendChild(ul);
+
+    // Add a back button
+    const backBtn = document.createElement('button');
+    backBtn.innerText = "Back";
+    backBtn.onclick = () => makeListView(currentData);
+    contentSection.appendChild(backBtn);
+}
+function showListItems(index, data) {
+    contentSection.innerHTML = `<h2>${data.lists[index].listName}</h2>`;
+    const ul = document.createElement('ul');
+    data.lists[index].items.forEach((item, itemIdx) => {
+        const li = document.createElement('li');
+
+        // Opret checkbox
+        const checkbox = document.createElement('input');
+        checkbox.type = "checkbox";
+        checkbox.checked = item.done;
+        checkbox.addEventListener('change', () => {
+            item.done = checkbox.checked;
+            saveData(data);
+            // Du kan evt. opdatere visningen her, hvis du vil vise ✔️ eller lignende
+            showListItems(index, data);
+        });
+
+        li.appendChild(checkbox);
+        li.appendChild(document.createTextNode(" " + item.name + (item.done ? " ✔️" : "")));
+        ul.appendChild(li);
+    });
+    contentSection.appendChild(ul);
+
+    // --- Tilføj input til nye underpunkter ---
+    const input = document.createElement('input');
+    input.type = "text";
+    input.placeholder = "Tilføj underpunkt...";
+    const addBtn = document.createElement('button');
+    addBtn.innerText = "Tilføj";
+    addBtn.onclick = () => {
+        const value = input.value.trim();
+        if (value) {
+            data.lists[index].items.push({ name: value, done: false });
+            saveData(data);
+            showListItems(index, data); // Opdater visningen
+        }
+    };
+    contentSection.appendChild(input);
+    contentSection.appendChild(addBtn);
+
+    // Tilføj tilbage-knap
+    const backBtn = document.createElement('button');
+    backBtn.innerText = "Tilbage";
+    backBtn.onclick = () => makeListView(data);
+    contentSection.appendChild(backBtn);
+}
+
 // #endregion
 
 
