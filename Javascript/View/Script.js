@@ -37,7 +37,6 @@ function makeNewData(){
         ]
 
     }
-    
     //RETURN NEWDATA
     return newData;
 }
@@ -93,6 +92,22 @@ function initApp(){
 
         // VIS DATA TIL USER
         makeListView(currentData)
+        function showListItems(index, data) {
+    contentSection.innerHTML = `<h2>${data.lists[index].listName}</h2>`;
+    const ul = document.createElement('ul');
+    data.lists[index].items.forEach(item => {
+        const li = document.createElement('li');
+        li.innerText = item.name + (item.done ? " ✔️" : "");
+        ul.appendChild(li);
+    });
+    contentSection.appendChild(ul);
+
+    // Tilføj tilbage-knap
+    const backBtn = document.createElement('button');
+    backBtn.innerText = "Tilbage";
+    backBtn.onclick = () => makeListView(data);
+    contentSection.appendChild(backBtn);
+}
 
 }
 
@@ -100,21 +115,24 @@ function initApp(){
 // #region VIEW CODE
 function makeListView(data){
     console.log('makeListView');
-    //VIS DATA TIL BRUGER
-    console.log(data);
-
-    //tøm contentsection
     contentSection.innerHTML='';
     data.lists.forEach ((list,index) => {
-        let listContainer = document.createElement('div')
-// vis liste
-listContainer.innerHTML=`<h2 onclick="listViewCallBack('showlist',${index})">${list.listName}</h2>
+        let listContainer = document.createElement('div');
+        const h2 = document.createElement('h2');
+        h2.innerText = list.listName;
+        h2.style.cursor = "pointer";
+        h2.addEventListener('click', () => showListItems(index, data));
+        listContainer.appendChild(h2);
+
+        // Tilføj knapper
+        listContainer.innerHTML += `
             <button class="delete-btn" data-index="${index}">Delete</button>
             <button class="edit-btn" data-index="${index}">Edit</button>
         `;
-
-    contentSection.appendChild(listContainer)
+        contentSection.appendChild(listContainer);
     });
+    // ... resten af din kode ...
+}
      // Add event listeners for delete buttons
      // Delete button logic
     document.querySelectorAll('.delete-btn').forEach(btn => {
@@ -150,7 +168,6 @@ listContainer.innerHTML=`<h2 onclick="listViewCallBack('showlist',${index})">${l
         });
     });
 
-}
 // 1. Create the button
 const darkModeBtn = document.createElement("button");
 darkModeBtn.innerText = "Toggle Dark Mode";
@@ -198,7 +215,7 @@ function initApp(){
     applyDarkMode(currentData.darkMode); // <-- add this line
     makeListView(currentData)
 }
-
+ 
 // #endregion
 
 
