@@ -1,6 +1,6 @@
 /* HER LAVER VI STYLE TIL TO DO APP */
-@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Monsieur+La+Doulaise&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Monsieur+La+Doulaise&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 /* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Smooch+Sans:wght@100..900&display=swap'); */
 :root{
     --light: #E4C5EA;
@@ -26,7 +26,7 @@ body{
 }
 /* HEADER */
 header{
-   font-family: "Monsieur La Doulaise", cursive;
+  font-family: "Montserrat", sans-serif;
   text-align: center;
   /* background-color: var(--light); */
   border-style: solid;
@@ -34,10 +34,10 @@ header{
 }
 
 h1{
-   font-family:  "Creepster", system-ui;
+  font-family: "Montserrat", sans-serif;
 }
 #mainContainer {
-  font-family:  "Creepster", system-ui;
+  font-family: "Montserrat", sans-serif;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -47,7 +47,7 @@ h1{
 
 /* prøve at center darkmodebutton */
 #darkModeButton{
-  font-family:  "Creepster", system-ui;
+  font-family: "Montserrat", sans-serif;
   display: block;
   margin: auto;
 }
@@ -57,13 +57,13 @@ h1{
 /* FOOTER */
 
 footer{
-  font-family:  "Creepster", system-ui;
+  font-family: "Montserrat", sans-serif;
   text-align: center;
   border-style: solid;
   border-width: 1px;
   }
   #mainFooter {
-    font-family:  "Creepster", system-ui;
+    font-family: "Montserrat", sans-serif;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -73,29 +73,29 @@ footer{
     right: 20px;
   }
 .list-row {
-  font-family:  "Creepster", system-ui;
+  font-family: "Montserrat", sans-serif;
   display: flex;
   align-items: center;
   justify-content: space-between;
   max-width: 500px;
-  margin: 10px auto;
+  margin: 20px auto;
   padding: 5px 10px;
   border-style: solid;
   border-width: 1px;
   }
 .list-row h2 {
-  font-family:  "Creepster", system-ui;
+  font-family: "Montserrat", sans-serif;
   margin: 0;
   font-size: 1.2em;
   flex: 1;
   text-align: left;
 }
 .list-row button {
-  font-family:  "Creepster", system-ui;
+ font-family: "Montserrat", sans-serif;
   margin: 10px;
 }
 #newListButton{
-  font-family:  "Creepster", system-ui;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* MOBILE FIRST */
