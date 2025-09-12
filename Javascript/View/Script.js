@@ -41,8 +41,8 @@ function makeNewData(){
     //RETURN NEWDATA
     return newData;
 }
- function createInput (obj_data, saftevand){
-console.log(obj_data, saftevand);
+ function createInput (obj_data,){
+console.log(obj_data,);
     let inputContainer = document.createElement("div")
     let inputElement = document.createElement("input")
     let saveButton = document.createElement("button")
@@ -112,6 +112,7 @@ function makeListView(data)
     
     data.lists.forEach ((list,index) => {
         let listContainer = document.createElement('div');
+        listContainer.className = "list-row"; // Tilføj denne linje
 
         // Opret h2 for listenavn
         const h2 = document.createElement('h2');
@@ -175,21 +176,22 @@ function makeListView(data)
 }
 // 1. Create the button
 const darkModeBtn = document.createElement("button");
-darkModeBtn.innerText = "Toggle Dark Mode";
+const footer = document.getElementById("mainFooter")
+darkModeBtn.innerText = "Dark Mode";
 darkModeBtn.id = "darkModeButton";
-document.body.prepend(darkModeBtn); // Add to top of body
+footer.append(darkModeBtn); // Add to top of body
 const darkModeStyle = document.createElement("style");
 darkModeStyle.innerHTML = `
   body.dark-mode {
-    background: #222 !important;
+    background: #B70606 !important;
     color: #eee !important;
   }
   body.dark-mode input, body.dark-mode button {
-    background: #333 !important;
+    background: #B70606 !important;
     color: #eee !important;
     border-color: #444 !important;
-  }
-`;
+  }`;
+
 document.head.appendChild(darkModeStyle);
 // 3. Toggle logic
 
@@ -217,7 +219,7 @@ function initApp(){
         currentData = makeNewData()
         saveData(currentData)
     }
-    applyDarkMode(currentData.darkMode); // <-- add this line
+    applyDarkMode(currentData.darkMode); 
     makeListView(currentData)
 }
 
