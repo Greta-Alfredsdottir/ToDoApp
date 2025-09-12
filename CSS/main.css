@@ -26,18 +26,23 @@ body{
 /* HEADER */
 header{
   font-family: "Montserrat" ;
-  
+  text-align: center;
   background-color: #c16262;
 }
-
 
 h1{
    font-family: "Montserrat", sans-serif;
 }
+#mainContainer {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
 /* FOOTER */
 
 footer{
-    background-color: rgb(233, 122, 122);
+  text-align: center;
+  background-color: rgb(233, 122, 122);
 }
 /* MOBILE FIRST */
 @media(min-width: 600px) {
