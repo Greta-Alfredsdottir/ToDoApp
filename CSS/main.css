@@ -59,10 +59,14 @@ footer{
   border-width: 1px;
   }
   #mainFooter {
+  position: relative;
   display: flex;
   justify-content: space-between;
   }
-  
+  #mainFooter button:last-of-type{
+    position: absolute;
+    right: 0;
+  }
 .list-row {
   display: flex;
   align-items: center;
