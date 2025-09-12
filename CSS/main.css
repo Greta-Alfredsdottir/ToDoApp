@@ -54,7 +54,7 @@ h1{
 /* FOOTER */
 
 footer{
-  /* text-align: center; */
+  text-align: center;
   border-style: solid;
   border-width: 1px;
   }
@@ -65,7 +65,7 @@ footer{
   }
   #mainFooter button:last-of-type{
     position: absolute;
-    right: 0;
+    right: 20px;
   }
 .list-row {
   display: flex;
