@@ -114,7 +114,7 @@ function makeListView(data)
     
     data.lists.forEach ((list,index) => {
         let listContainer = document.createElement('div');
-        listContainer.className = "list-row"; // Tilføj denne linje
+        listContainer.className = "list-row"; 
 
         // Opret h2 for listenavn
         const h2 = document.createElement('h2');
