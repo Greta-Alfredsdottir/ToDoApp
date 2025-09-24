@@ -83,6 +83,17 @@ saveButton.addEventListener("click", ()=>{
 // #endregion
 
 // #region CONTROLLER CODE , (den skal skrives først)
+// 5. Update initApp to apply dark mode on startup
+function initApp(){
+    console.log('initApp');
+    currentData=getData(); // initapp beder "getdata" at hente data
+    if (currentData==null) {
+        currentData = makeNewData()
+        saveData(currentData)
+    }
+    applyDarkMode(currentData.darkMode); 
+    makeListView(currentData)
+}
 function initApp(){
     console.log('initApp');
     
@@ -213,17 +224,7 @@ function applyDarkMode(isDark) {
     }
 }
 
-// 5. Update initApp to apply dark mode on startup
-function initApp(){
-    console.log('initApp');
-    currentData=getData();
-    if (currentData==null) {
-        currentData = makeNewData()
-        saveData(currentData)
-    }
-    applyDarkMode(currentData.darkMode); 
-    makeListView(currentData)
-}
+
 
 function showListItems(listIndex) {
     const list = currentData.lists[listIndex];
