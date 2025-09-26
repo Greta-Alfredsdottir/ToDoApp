@@ -33,6 +33,8 @@ h1 {
   font-family: "Montserrat", sans-serif;
   display: block;
   margin: auto;
+  border-radius: 12px;
+  background-color: #44ccee;
 }
 
 .list-row {

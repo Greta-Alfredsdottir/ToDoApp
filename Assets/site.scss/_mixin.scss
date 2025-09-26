@@ -1,0 +1,10 @@
+// her laver vi mixin så vi ikke skal ændre mange steder
+@use 'color';
+
+@mixin border-radius{
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    border-radius: 12px;
+    background-color: color.$static;
+}

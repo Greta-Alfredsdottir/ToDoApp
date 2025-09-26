@@ -1,11 +1,13 @@
 // Button
 @use 'global';
+@use 'mixin';
 
 /* prøver at center darkmodebutton */
 #darkModeButton{
   font-family: "Montserrat", sans-serif;
   display: block;
   margin: auto;
+  @include mixin.border-radius;
 }
 .list-row {
   font-family: "Montserrat", sans-serif;
@@ -24,7 +26,7 @@
   font-size: 1.2em;
   flex: 1;
   text-align: left;
-}
+  }
 .list-row button {
  font-family: "Montserrat", sans-serif;
   margin: 10px;
