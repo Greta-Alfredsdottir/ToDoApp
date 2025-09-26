@@ -1,26 +1,27 @@
 // HER HAR VI VORES JAVASCRIPT FILE
 
 // #region GLOBALS
+// Dette er det område på siden, hvor lister og opgaver vises
 const contentSection = document.getElementById("mainContainer");
-let currentData=null;
+let currentData=null; // dette holder på alle lister og opgaver.
 // #endregion
 
 initApp() // FUNCTIONSCALL TO FUNCTIONEN "INITAPP"
 
 // #region MODEL CODE
-function getData(){
+function getData(){ //getData(): Henter dine lister fra browserens hukommelse (localStorage).
     console.log('getData');
 
     return JSON.parse(localStorage.getItem("ToDoListApp_v1"));
 }
-function saveData(myData){
+function saveData(myData){ //saveData(myData): Gemmer dine lister i browserens hukommelse.
     console.log('saveData');
     let serializesData=JSON.stringify(myData) // ingen gåseben, det er en functions parameter
 
     localStorage.setItem("ToDoListApp_v1", serializesData);
 }
 function makeNewData(){
-    console.log('makeNewData');
+    console.log('makeNewData'); //makeNewData(): Laver nogle start-lister, hvis du ikke har nogen i forvejen.
     //DUMMY DATA, HUSK AT TØMME LISTER INDEN DEPLOYMENT
     let newData={
         darkMode:false,
@@ -42,7 +43,8 @@ function makeNewData(){
     return newData;
 }
 //SAVEBUTTON
- function createInput (obj_data,){
+ function createInput (obj_data,){ //createInput(): Viser et inputfelt og en "gem"-knap, så du kan skrive navnet på en ny liste. Når du klikker "gem", bliver listen gemt og visningen opdateres.
+
     
 console.log(obj_data,);
     let inputContainer = document.createElement("div")
