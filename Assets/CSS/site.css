@@ -1,0 +1,87 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+/* BUTTONS */
+body {
+  border-style: solid;
+  border-width: 1px;
+  background-color: #E4C5EA;
+}
+
+/* HEADER */
+header {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+}
+
+#mainContainer {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+  border-width: 1px;
+}
+
+/* prøver at center darkmodebutton */
+#darkModeButton {
+  font-family: "Montserrat", sans-serif;
+  display: block;
+  margin: auto;
+}
+
+.list-row {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 5px 10px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.list-row h2 {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  font-size: 1.2em;
+  flex: 1;
+  text-align: left;
+}
+
+.list-row button {
+  font-family: "Montserrat", sans-serif;
+  margin: 10px;
+}
+
+#newListButton {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* FOOTER */
+footer {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+}
+
+#mainFooter {
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+#mainFooter button:last-of-type {
+  position: absolute;
+  right: 20px;
+}
+
+/* MOBILE FIRST *//*# sourceMappingURL=site.css.map */
